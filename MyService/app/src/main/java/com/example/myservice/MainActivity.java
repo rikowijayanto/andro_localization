@@ -2,6 +2,7 @@ package com.example.myservice;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -34,6 +35,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_start_service :
+                Intent mStartServiceIntent = new Intent(MainActivity.this, MyService.class);
+                startService(mStartServiceIntent);
                 break;
 
             case R.id.btn_start_intent_service:
